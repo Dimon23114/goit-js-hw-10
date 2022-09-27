@@ -4,12 +4,10 @@ export function fetchCountries(name) {
       `${BASE_URL}name/${name}?`
     )
       .then(response => {        
-          if (response.status === 200) {            
+          if (response.ok) {            
               return response.json();
             }
-                  
-            if (response.status === 404) {
               return Promise.reject('Error 404');
-            }     
+          
       })    
   } 

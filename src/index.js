@@ -28,14 +28,14 @@ function onSearch (e) {
     fetchCountries(nameCountry)
   .then(countries => {
     finallyMarkup(countries);
-  }).catch(error => {if(error === "Error 404") {
+  }) 
     Notiflix.Notify.failure("Oops, there is no country with that name")
-  }})
+  
 
 };
 
 
-
+function markup() { array.reduce((acc, item))}
 
 const makeMaxMarkup = item => `
 <li>
@@ -49,7 +49,7 @@ const makeMaxMarkup = item => `
 
 const makeMinMarkup = item => `
 <li>
-<img src="${item.flags.svg}" width=70px>
+<img src="${item.flags.svg}" width='70'>
 <p> ${item.name.official}</p>
 </li>
 `;
@@ -61,10 +61,10 @@ function makeMarkup(array) {
         "Too many matches found. Please enter a more specific name.")} 
 
     else if(array.length >= 2 && array.length <= 10){            
-        return array.reduce((acc, item) => acc + makeMinMarkup(item), "")}
+        return markup => acc + makeMinMarkup(item), ""}
 
      else if(array.length === 1) {
-        return array.reduce((acc, item) => acc + makeMaxMarkup(item), "") 
+        return markup => acc + makeMaxMarkup(item), "" 
     } 
 };
 
